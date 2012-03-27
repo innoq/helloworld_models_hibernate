@@ -5,14 +5,13 @@
              version="1.0">
     <persistence-unit name="defaultPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>guest.Guest</class>
         <properties>
             <property name="hibernate.dialect" value="dialect.SQLiteDialect" />
             <property name="hibernate.connection.driver_class" value="org.sqlite.JDBC" />
             <property name="hibernate.connection.url" value="jdbc:sqlite:./dbtest.sqlite3" />
             <property name="hibernate.connection.username" value="" />
             <property name="hibernate.connection.password" value="" />
-            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
         </properties>
     </persistence-unit>
 </persistence>

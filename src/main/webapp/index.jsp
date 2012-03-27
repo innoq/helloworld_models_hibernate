@@ -1,1 +1,1 @@
-<jsp:forward page="GuestServlet" />
+<jsp:forward page="TestServlet" />

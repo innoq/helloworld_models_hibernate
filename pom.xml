@@ -4,10 +4,10 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.objectdb.tutorial.web</groupId>
-  <artifactId>Guestbook</artifactId>
+  <artifactId>Helloworld</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
-  <name>Guestbook</name>
+  <name>Helloworld</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,7 +76,7 @@
 	</executions>
       </plugin>
     </plugins>
-    <finalName>Guestbook</finalName>
+    <finalName>Helloworld</finalName>
   </build>
 
 </project>

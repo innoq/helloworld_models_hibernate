@@ -1,9 +1,9 @@
-package guest;
+package com.innoq.helloworld.testservlet;
  
 import javax.persistence.*;
 import javax.servlet.*;
  
-public class GuestListener implements ServletContextListener {
+public class ContextListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent e) {
         EntityManagerFactory emf =

@@ -1,22 +1,25 @@
 package com.innoq.helloworld.models;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity @Table(name="relations")
-public class Relation {
 
-	@Id
-	@GeneratedValue
-	Long id;
-	@Column(name = "attr_type")
+public class Relation {
+    class RelationPK implements Serializable {
+        @Column(name="source_id")
+        Long sourceId;
+        @Column(name="destination_id")
+        Long destinationId;
+        
+        
+    }
+
+    @EmbeddedId
+    private RelationPK id;
+
 	private String comment;
 	private Boolean accepted;
 	
@@ -25,10 +28,10 @@ public class Relation {
 	@Column(name = "updated_at")
 	private Timestamp updatedAt;
 	
-	@ManyToOne @JoinColumn(name="source_id")
+	@ManyToOne @JoinColumn(name="source_id", insertable = false, updatable = false)
 	private Profile source;
 
-	@ManyToOne @JoinColumn(name="destination_id")
+	@ManyToOne @JoinColumn(name="destination_id", insertable = false, updatable = false)
 	private Profile destination;
 
 	public Relation() {
@@ -69,10 +72,6 @@ public class Relation {
 
 	public void setDestination(Profile destination) {
 		this.destination = destination;
-	}
-
-	public Long getId() {
-		return id;
 	}
 
 	public Timestamp getCreatedAt() {
